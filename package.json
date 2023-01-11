@@ -1,0 +1,27 @@
+{
+  "name": "@eten-lab/eil-notification",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lerna": "lerna",
+    "dev": "lerna run start --stream --parallel",
+    "test": "lerna run test --",
+    "build": "lerna run build",
+    "prepublish": "lerna run prepublish",
+    "start:example": "npm run build && yarn --cwd packages/notification link && yarn --cwd node_modules/react link && yarn --cwd ./example link react @eten-lab/notification && yarn --cwd ./example && yarn --cwd ./example run start",
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "lerna": "^6.1.0",
+    "tsdx": "^0.14.1",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "@types/react-router": "^5.1.11",
+    "@types/react-router-dom": "^5.1.7",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0"
+  }
+}
